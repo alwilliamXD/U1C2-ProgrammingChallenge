@@ -9,41 +9,55 @@ public class Solution {
 
     public double average(double t1, double t2, double t3, double t4) {
         // remove 0.0 and return your answer
-        return 0.0;
+        return (t1+t2+t3+t4)/4;
     }
 
     public int roundAverage(double average) {
         // remove 0 and return your answer
-        return 0;
+        return (int)(average+0.5);
     }
 
     public boolean isPassing(int roundedAverage) {
         // remove false and return your answer
-        return false;
+        if (roundedAverage >= 65) {
+            return true;
+        }
+        else {
+            return false;
     }
-
+}
     /*
     Problem 2: Stock Price 
     */
 
     public double totalStock(int shares, double price) {
         // remove 0.0 and return your answer
-        return 0.0;
+        double total = (shares*price);
+        return total;
     }
 
 
     public int roundValueChange(double totalStock) {
         // remove 0 and return your answer
-        return 0;
-    }
-
-    /*
+        if (totalStock < 0) {
+             return (int)(totalStock-0.5);
+        }
+           else {
+            return (int)(totalStock-0.5);
+        }
+     }    
+     /*
     Problem 3: Digit Incrementer 
     */
    
     public double adjustDigits(double userDouble) {
         // remove 0.0 and return your answer
-        return 0.0;
+        int third = (int)(userDouble/100)%10+1;
+        int second = (int)(userDouble/10)%10+1;
+        int first = (int)(userDouble)%10+1;
+        int tenth = (int)(userDouble*10)%10+1;
+        int hundredth = (int)(userDouble*100)%10+1;
+        return (hundredth*.01+tenth*.1+first+second*10+third*100);
     }
 
     public static void main(String[] args) {
