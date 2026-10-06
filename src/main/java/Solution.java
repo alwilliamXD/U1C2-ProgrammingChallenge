@@ -43,7 +43,7 @@ public class Solution {
              return (int)(totalStock-0.5);
         }
            else {
-            return (int)(totalStock-0.5);
+            return (int)(totalStock+0.5);
         }
      }    
      /*
@@ -52,12 +52,12 @@ public class Solution {
    
     public double adjustDigits(double userDouble) {
         // remove 0.0 and return your answer
-        int third = (int)(userDouble/100)%10+1;
-        int second = (int)(userDouble/10)%10+1;
-        int first = (int)(userDouble)%10+1;
-        int tenth = (int)(userDouble*10)%10+1;
-        int hundredth = (int)(userDouble*100)%10+1;
-        return (hundredth*.01+tenth*.1+first+second*10+third*100);
+        int third = (int)((userDouble/100)%10+1)%10;
+        int second = (int)((userDouble/10)%10+1)%10;
+        int first = (int)((userDouble)%10+1)%10;
+        int tenth = (int)((userDouble*10)%10+1)%10;
+        int hundredth = (int)((userDouble*100)%10+1)%10;
+        return (third*100+second*10+first+tenth*0.1+hundredth*0.01);
     }
 
     public static void main(String[] args) {
