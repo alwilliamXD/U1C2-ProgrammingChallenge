@@ -54,7 +54,7 @@ public class Solution {
         // remove 0.0 and return your answer
         int third = (int)(userDouble/100)%10+1;
         int second = (int)(userDouble/10)%10+1;
-        int first = (int)(userDouble)%10+1;
+        int first = (int)((userDouble)%10+1)%10;
         int tenth = (int)(userDouble*10)%10+1;
         int hundredth = (int)(userDouble*100)%10+1;
         return (hundredth*.01+tenth*.1+first+second*10+third*100);
